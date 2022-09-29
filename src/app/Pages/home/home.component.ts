@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AirBnbService } from 'src/app/Services/air-bnb.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ export class HomeComponent implements OnInit {
   private geoPosition :Geolocation;
 
 
-  constructor() { 
+  constructor(private airBnbService: AirBnbService) { 
 
     this.geoPosition = navigator.geolocation;
 
@@ -20,6 +21,11 @@ export class HomeComponent implements OnInit {
 
     const getPositionSucces=(geoPositon:GeolocationPosition)=>{
       console.log(geoPositon);
+      const position = {
+        lat: geoPositon.coords.latitude,
+        lng: geoPositon.coords.longitude
+      }
+      this.airBnbService.getDepartments(position);
     }
 
     
