@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserLocationInterface } from 'src/app/Models/user-location-model';
 import { AirBnbService } from 'src/app/Services/air-bnb.service';
 
 @Component({
@@ -21,11 +22,13 @@ export class HomeComponent implements OnInit {
 
     const getPositionSucces=(geoPositon:GeolocationPosition)=>{
       console.log(geoPositon);
-      const position = {
-        lat: geoPositon.coords.latitude,
-        lng: geoPositon.coords.longitude
+      const position: UserLocationInterface = {
+        location: {
+          lat: geoPositon.coords.latitude,
+          lng: geoPositon.coords.longitude
+        }
       }
-      this.airBnbService.getDepartments(position);
+      this.airBnbService.getDepartments(position).subscribe(console.log);
     }
 
     
