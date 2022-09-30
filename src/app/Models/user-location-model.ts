@@ -1,5 +1,5 @@
-export interface UserLocationInterface {
-    location: Location;
+export type UserLocationInterface = {
+    position: Location;
 }
 
 export type Location = {
