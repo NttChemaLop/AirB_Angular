@@ -50,7 +50,7 @@ export type simpleInfoResponse = {
     price:                 Bathrooms
 }
 
-const DEFAULT_DEPARTMENT: simpleInfoResponse = {
+export const DEFAULT_DEPARTMENT: simpleInfoResponse = {
     _id:                   'string',
     images:                {
         medium_url:     'string',
