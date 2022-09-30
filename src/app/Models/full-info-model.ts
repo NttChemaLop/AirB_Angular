@@ -1,3 +1,4 @@
+
 export interface FullInfoResponse {
     _id:                   string;
     access:                string;
@@ -37,7 +38,51 @@ export interface FullInfoResponse {
     summary:               string;
     transit:               string;
    }
-   
+
+export type simpleInfoResponse = {
+    _id:                   string,
+    images:                Images,
+    address:               Address,
+    name:                  string,
+    review_scores:         ReviewScores,
+    score:                 number,
+    summary:               string,
+    price:                 Bathrooms
+}
+
+const DEFAULT_DEPARTMENT: simpleInfoResponse = {
+    _id:                   'string',
+    images:                {
+        medium_url:     'string',
+        picture_url:    'string',
+        thumbnail_url:  'string',
+        xl_picture_url: 'string'
+    },
+    address:               {
+        country:         'string',
+        country_code:    'string',
+        government_area: 'string',
+        location:        {
+            coordinates:       [],
+            is_location_exact: true,
+            type:              'string'
+        },
+        market:          'string',
+        street:          'string',
+        suburb:          'string'
+    },
+    name:                  'string',
+    review_scores:         [],
+    score:                 1,
+    summary:               'string',
+    price:                 {
+        $numberDecimal: 'string'
+    }
+
+}
+
+export const createDefaultDepartment = (): simpleInfoResponse => ({...DEFAULT_DEPARTMENT});
+
    export interface Address {
     country:         string;
     country_code:    string;

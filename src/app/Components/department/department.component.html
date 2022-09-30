@@ -1,1 +1,21 @@
-<p>department works!</p>
+<div class="department_card">
+
+  <img class="department_img"
+    src="{{department.images.picture_url}}"
+    alt="">
+
+
+
+  <div class="department_title">
+
+    <p class="department_country">{{department.address.street}}</p>
+
+    <p>{{department.score}} ★</p>
+
+  </div>
+
+  <p>{{department.summary}}</p>
+
+  <p><span class="department_price">{{department.price.$numberDecimal}}</span>€/noche</p>
+
+</div>

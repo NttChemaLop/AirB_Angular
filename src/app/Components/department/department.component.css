@@ -1,0 +1,45 @@
+.department_card{
+
+    width: 18rem;
+    padding: 5px;
+
+}
+
+
+
+
+.department_img{
+
+    width: 18rem;
+
+    border-radius: 15px;
+
+}
+
+
+
+.department_title{
+
+    display: flex;
+
+    justify-content: space-between;
+
+   
+
+}
+
+
+
+.department_country{
+
+    font-weight: bold;
+
+}
+
+
+
+.department_price{
+
+    font-weight: bold;
+
+}

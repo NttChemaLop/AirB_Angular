@@ -8,8 +8,7 @@ import { DepartmentComponent } from './Components/department/department.componen
 
 @NgModule({
   declarations: [
-    AppComponent,
-    DepartmentComponent,
+    AppComponent
     
   ],
   imports: [

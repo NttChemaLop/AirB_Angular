@@ -1,7 +1,8 @@
+import { simpleInfoResponse } from 'src/app/Models/full-info-model';
 import { Component, OnInit } from '@angular/core';
-import { UserLocationInterface } from 'src/app/Models/user-location-model';
-import { AirBnbService } from 'src/app/Services/air-bnb.service';
 import { ModelsFactoryService } from 'src/app/Services/models-factory.service';
+import { AirBnbService } from 'src/app/Services/air-bnb.service';
+import { UserLocationInterface } from 'src/app/Models/user-location-model';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +13,7 @@ export class HomeComponent implements OnInit {
 
   private geoPosition :Geolocation;
 
+  departments: any = [];
 
   constructor(private airBnbService: AirBnbService,private modelFactory:ModelsFactoryService) { 
 
@@ -22,10 +24,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     const getPositionSucces=(geoPositon:GeolocationPosition)=>{
-      console.log(geoPositon);
+
       const position: UserLocationInterface = this.modelFactory.createLocation( geoPositon.coords.latitude,geoPositon.coords.longitude)
       
-      this.airBnbService.getDepartments(position).subscribe(console.log);
+      this.airBnbService.getDepartments(position).subscribe(d => this.departments = d);
     }
 
     
