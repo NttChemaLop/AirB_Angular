@@ -1,4 +1,9 @@
-export interface GeolocationInterface {
+export function isGeolocationInterface(geolocation:any):geolocation is GeolocationInterface{
+ return !!geolocation.location?.lat; 
+}
+
+
+export type GeolocationInterface= {
     location: Geolocation;
 }
 
