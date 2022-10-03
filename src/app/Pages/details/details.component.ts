@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FullInfoResponse, SimpleInfoResponse } from 'src/app/Models/full-info-model';
 import { DepartmentstateService } from 'src/app/Services/departmentstate.service';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -10,11 +10,15 @@ import { DepartmentstateService } from 'src/app/Services/departmentstate.service
 })
 export class DetailsComponent implements OnInit {
 
-
+  public id: string = '';
   department!: FullInfoResponse;
 
-  constructor(private departmentStateService : DepartmentstateService) { 
-      this.departmentStateService.getDepartments("10082422").subscribe(depart =>{this.department=depart});
+  constructor(private route: ActivatedRoute, private departmentStateService : DepartmentstateService) { 
+    this.route.params.subscribe(params => {
+      this.id = params['id'];
+     
+    })
+      this.departmentStateService.getDepartments(this.id).subscribe(depart =>{this.department=depart});
 
   
   }

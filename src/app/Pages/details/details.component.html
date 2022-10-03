@@ -1,10 +1,24 @@
 <h2>{{department.name}}</h2>
+<div class="department_sub-title">
+    <p>{{department.reviews.length}} evaluaciones</p>
+<p><span>{{department.address.suburb}}</span>, <span>{{department.address.market}}</span>,
+    <span>{{department.address.country}}</span> </p>
+
+</div>
+
 <img class="department_img" src="{{department.images.picture_url}}" alt="">
+
+<div class="header"></div>
+<h2>{{department.access}}</h2>
+<span>{{department.bedrooms}} dormitarios</span> <span>{{department.beds}} camas</span>
+
+<div class="header"></div>
+
 <div class="header"></div>
 <p>Cancelación gratuita durante 48 horas</p>
 <div class="header"></div>
 <div class="mapComponent">
     <p>{{department.summary}}</p>
     <div class="header"></div>
-    <!-- <app-map [department]="department"></app-map> -->
+    <app-map [department]="department"></app-map>
 </div>
