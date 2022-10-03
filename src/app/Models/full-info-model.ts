@@ -1,5 +1,5 @@
 
-export interface FullInfoResponse {
+export type FullInfoResponse= {
     _id:                   string;
     access:                string;
     accommodates:          number;
@@ -76,14 +76,14 @@ export const DEFAULT_DEPARTMENT: simpleInfoResponse = {
     score:                 1,
     summary:               'string',
     price:                 {
-        $numberDecimal: 'string'
+                    numberDecimal: 'string'
     }
 
 }
 
 export const createDefaultDepartment = (): simpleInfoResponse => ({...DEFAULT_DEPARTMENT});
 
-   export interface Address {
+   export type Address= {
     country:         string;
     country_code:    string;
     government_area: string;
@@ -93,24 +93,24 @@ export const createDefaultDepartment = (): simpleInfoResponse => ({...DEFAULT_DE
     suburb:          string;
    }
    
-   export interface Location {
+   export type Location= {
     coordinates:       number[];
     is_location_exact: boolean;
     type:              string;
    }
    
-   export interface Availability {
+   export type Availability ={
     availability_30:  number;
     availability_365: number;
     availability_60:  number;
     availability_90:  number;
    }
    
-   export interface Bathrooms {
-    $numberDecimal: string;
+   export type Bathrooms= {
+    numberDecimal: string;
    }
    
-   export interface Host {
+   export type Host ={
     host_about:                string;
     host_has_profile_pic:      boolean;
     host_id:                   string;
@@ -127,13 +127,13 @@ export const createDefaultDepartment = (): simpleInfoResponse => ({...DEFAULT_DE
     host_verifications:        string[];
    }
    
-   export interface Images {
+   export type Images= {
     medium_url:     string;
     picture_url:    string;
     thumbnail_url:  string;
     xl_picture_url: string;
    }
    
-   export interface ReviewScores {
+   export type ReviewScores ={
    }
    

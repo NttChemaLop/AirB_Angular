@@ -13,10 +13,10 @@ export class HomeComponent implements OnInit {
 
   private geoPosition :Geolocation;
 
-  departments: simpleInfoResponse[] = [DEFAULT_DEPARTMENT];
+  public  departments: simpleInfoResponse[] = [DEFAULT_DEPARTMENT];
 
   constructor(private airBnbService: AirBnbService,private modelFactory:ModelsFactoryService) { 
-
+    this.departments = []
     this.geoPosition = navigator.geolocation;
 
   }

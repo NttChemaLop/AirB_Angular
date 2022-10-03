@@ -1,5 +1,5 @@
 <div class="department_card">
-<a [routerLink]="[department._id]">
+<a (click)="goToDetailsPage(department)">
 
   <img class="department_img"
   src="{{department.images.picture_url}}"
@@ -19,6 +19,6 @@
 
   <p>{{department.summary}}</p>
 
-  <p><span class="department_price">{{department.price.$numberDecimal}}</span>€/noche</p>
+  <p><span class="department_price">{{department.price.numberDecimal}}</span>€/noche</p>
 
 </div>
