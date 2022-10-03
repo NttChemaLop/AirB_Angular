@@ -1,3 +1,4 @@
+import { DEFAULT_FULL_RESPONSE } from './../../Models/full-info-model';
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import * as mapApi from 'leaflet';
 import {  createDefaultDepartment, FullInfoResponse } from 'src/app/Models/full-info-model';
@@ -12,7 +13,7 @@ import { PopUpService } from 'src/app/Services/pop-up.service';
 export class MapComponent implements AfterViewInit {
 
   private map!: mapApi.Map;
-  @Input() department:any;
+  @Input() department:FullInfoResponse = DEFAULT_FULL_RESPONSE;
 
   constructor(private popUpService:PopUpService) { }
 
