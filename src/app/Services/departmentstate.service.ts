@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { simpleInfoResponse } from '../Models/full-info-model';
+import { SimpleInfoResponse } from '../Models/full-info-model';
 import { ModelsFactoryService } from './models-factory.service';
 
 @Injectable({
@@ -8,8 +8,8 @@ import { ModelsFactoryService } from './models-factory.service';
 })
 export class DepartmentstateService {
 
-  private $departmentState :BehaviorSubject<simpleInfoResponse>
-  public readonly  $actualDeparmentState:Observable<simpleInfoResponse>
+  private $departmentState :BehaviorSubject<SimpleInfoResponse>
+  public readonly  $actualDeparmentState:Observable<SimpleInfoResponse>
 
 
   constructor(private modelFactory : ModelsFactoryService) {
@@ -21,7 +21,7 @@ export class DepartmentstateService {
 
    }
 
-   setDepartment(department:simpleInfoResponse){
+   setDepartment(department:SimpleInfoResponse){
     localStorage.setItem('department',JSON.stringify(department))
     this.$departmentState.next(department)
    }

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Address,Location,simpleInfoResponse,Images,Bathrooms } from '../Models/full-info-model';
+import { Address,Location,SimpleInfoResponse,Images,Bathrooms } from '../Models/full-info-model';
 import { UserLocationInterface } from '../Models/user-location-model';
 
 @Injectable({
@@ -20,7 +20,7 @@ export class ModelsFactoryService {
       }}
   }
 
-  createEmptySimpleDeparment():simpleInfoResponse{
+  createEmptySimpleDeparment():SimpleInfoResponse{
     return {...{
       _id:'',
       images:                this.createEmptyImages(),

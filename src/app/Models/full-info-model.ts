@@ -39,7 +39,7 @@ export type FullInfoResponse= {
     transit:               string;
    }
 
-export type simpleInfoResponse = {
+export type SimpleInfoResponse = {
     _id:                   string,
     images:                Images,
     address:               Address,
@@ -50,7 +50,7 @@ export type simpleInfoResponse = {
     price:                 Bathrooms
 }
 
-export const DEFAULT_DEPARTMENT: simpleInfoResponse = {
+export const DEFAULT_DEPARTMENT: SimpleInfoResponse = {
     _id:                   'string',
     images:                {
         medium_url:     'string',
@@ -81,7 +81,7 @@ export const DEFAULT_DEPARTMENT: simpleInfoResponse = {
 
 }
 
-export const createDefaultDepartment = (): simpleInfoResponse => ({...DEFAULT_DEPARTMENT});
+export const createDefaultDepartment = (): SimpleInfoResponse => ({...DEFAULT_DEPARTMENT});
 
    export type Address= {
     country:         string;

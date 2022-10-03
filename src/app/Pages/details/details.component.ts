@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { simpleInfoResponse } from 'src/app/Models/full-info-model';
+import { SimpleInfoResponse } from 'src/app/Models/full-info-model';
 import { DepartmentstateService } from 'src/app/Services/departmentstate.service';
 import { ModelsFactoryService } from 'src/app/Services/models-factory.service';
 
@@ -11,7 +11,7 @@ import { ModelsFactoryService } from 'src/app/Services/models-factory.service';
 export class DetailsComponent implements OnInit {
 
 
-  department!: simpleInfoResponse;
+  department!: SimpleInfoResponse;
 
   constructor(private departmentStateService : DepartmentstateService) { 
       this.departmentStateService.$actualDeparmentState.subscribe(depart =>{this.department=depart});
@@ -21,5 +21,8 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+
+  
 
 }

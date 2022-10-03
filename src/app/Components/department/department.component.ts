@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { createDefaultDepartment, simpleInfoResponse } from 'src/app/Models/full-info-model';
+import { createDefaultDepartment, SimpleInfoResponse } from 'src/app/Models/full-info-model';
 import { DepartmentstateService } from 'src/app/Services/departmentstate.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { DepartmentstateService } from 'src/app/Services/departmentstate.service
   styleUrls: ['./department.component.css']
 })
 export class DepartmentComponent {
-  @Input() department: simpleInfoResponse = createDefaultDepartment();
+  @Input() department: SimpleInfoResponse = createDefaultDepartment();
 
 
   constructor(private router: Router,private departmentStateService : DepartmentstateService){
@@ -17,7 +17,7 @@ export class DepartmentComponent {
 
   }
 
-  goToDetailsPage(department:simpleInfoResponse):void{
+  goToDetailsPage(department:SimpleInfoResponse):void{
     this.departmentStateService.setDepartment(department);
     this.router.navigate([department._id])
   
