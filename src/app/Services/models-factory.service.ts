@@ -67,7 +67,7 @@ export class ModelsFactoryService {
 
     createEmptyBathrooms():Bathrooms{
       return {...{
-        numberDecimal:''
+        $numberDecimal:''
       }}
 
     }

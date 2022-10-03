@@ -76,7 +76,7 @@ export const DEFAULT_DEPARTMENT: SimpleInfoResponse = {
     score:                 1,
     summary:               'string',
     price:                 {
-                    numberDecimal: 'string'
+    $numberDecimal: 'string'
     }
 
 }
@@ -107,7 +107,7 @@ export const createDefaultDepartment = (): SimpleInfoResponse => ({...DEFAULT_DE
    }
    
    export type Bathrooms= {
-    numberDecimal: string;
+    $numberDecimal: string;
    }
    
    export type Host ={
