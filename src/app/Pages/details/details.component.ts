@@ -18,16 +18,25 @@ export class DetailsComponent implements OnInit {
       this.id = params['id'];
      
     })
-      this.departmentStateService.getDepartments(this.id).subscribe(depart =>{this.department=depart});
-
+      this.departmentStateService.getDepartments(this.id).subscribe(depart =>{
+        this.department=depart;
+       this.department.review_scores.review_scores_checkin=  this.transformReviews(5,this.department.review_scores.review_scores_checkin);
+       this.department.review_scores.review_scores_accuracy=  this.transformReviews(5,this.department.review_scores.review_scores_accuracy);
+       this.department.review_scores.review_scores_cleanliness=  this.transformReviews(5,this.department.review_scores.review_scores_cleanliness);
+       this.department.review_scores.review_scores_communication=  this.transformReviews(5,this.department.review_scores.review_scores_communication);
+       this.department.review_scores.review_scores_location=  this.transformReviews(5,this.department.review_scores.review_scores_location);
+       this.department.review_scores.review_scores_value=  this.transformReviews(5,this.department.review_scores.review_scores_value);
+       this.department.review_scores.review_scores_rating=  this.transformReviews(5,this.department.review_scores.review_scores_rating)
+        console.log(this.department)});
+     
   
   }
 
   ngOnInit(): void {
-    console.log(this.department)
+  
   }
 
-
+  transformReviews=(score:number, number:number):number=> number * score/10 ;
   
 
 }
