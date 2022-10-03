@@ -13,13 +13,16 @@ export class DepartmentstateService {
 
 
   constructor(private modelFactory : ModelsFactoryService) {
+    const localData =localStorage.getItem('department')
+    const initialState = localData!==null ? JSON.parse(localData):  this.modelFactory.createEmptySimpleDeparment()
 
-    this.$departmentState = new BehaviorSubject(this.modelFactory.createEmptySimpleDeparment());
+    this.$departmentState = new BehaviorSubject(initialState);
     this.$actualDeparmentState = this.$departmentState.asObservable();
 
    }
 
    setDepartment(department:simpleInfoResponse){
+    localStorage.setItem('department',JSON.stringify(department))
     this.$departmentState.next(department)
    }
 
