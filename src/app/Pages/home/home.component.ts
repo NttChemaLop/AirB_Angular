@@ -1,4 +1,4 @@
-import { simpleInfoResponse, DEFAULT_DEPARTMENT } from 'src/app/Models/full-info-model';
+import { SimpleInfoResponse, DEFAULT_DEPARTMENT } from 'src/app/Models/full-info-model';
 import { Component, OnInit } from '@angular/core';
 import { ModelsFactoryService } from 'src/app/Services/models-factory.service';
 import { AirBnbService } from 'src/app/Services/air-bnb.service';
@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   private geoPosition :Geolocation;
 
-  public  departments: simpleInfoResponse[] = [DEFAULT_DEPARTMENT];
+  public  departments: SimpleInfoResponse[] = [DEFAULT_DEPARTMENT];
 
   constructor(private airBnbService: AirBnbService,private modelFactory:ModelsFactoryService) { 
     this.departments = []

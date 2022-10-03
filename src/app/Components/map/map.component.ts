@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import * as mapApi from 'leaflet';
-import { simpleInfoResponse, createDefaultDepartment } from 'src/app/Models/full-info-model';
+import { SimpleInfoResponse, createDefaultDepartment } from 'src/app/Models/full-info-model';
 import { PopUpService } from 'src/app/Services/pop-up.service';
 
 
@@ -12,7 +12,7 @@ import { PopUpService } from 'src/app/Services/pop-up.service';
 export class MapComponent implements AfterViewInit {
 
   private map!: mapApi.Map;
-  @Input() department: simpleInfoResponse = createDefaultDepartment();
+  @Input() department: SimpleInfoResponse = createDefaultDepartment();
 
   constructor(private popUpService:PopUpService) { }
 
