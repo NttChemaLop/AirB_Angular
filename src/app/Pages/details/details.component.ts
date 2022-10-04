@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DEFAULT_FULL_RESPONSE, FullInfoResponse } from 'src/app/Models/full-info-model';
+import { createDefaultFullResponse, FullInfoResponse } from 'src/app/Models/full-info-model';
 import { DepartmentstateService } from 'src/app/Services/departmentstate.service';
 import { ActivatedRoute } from '@angular/router';
 
@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetailsComponent implements OnInit {
 
   public id: string = '';
-  department: FullInfoResponse= DEFAULT_FULL_RESPONSE;
+  department: FullInfoResponse= createDefaultFullResponse();
 
   constructor(private route: ActivatedRoute, private departmentStateService : DepartmentstateService) { 
     this.route.params.subscribe(params => {

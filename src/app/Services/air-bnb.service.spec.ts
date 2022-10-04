@@ -4,7 +4,7 @@ import { AirBnbService } from './air-bnb.service';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { UserLocationInterface } from '../Models/user-location-model';
 
-fdescribe('AirBnbService', () => {
+xdescribe('AirBnbService', () => {
   let service: AirBnbService;
   let httpTestingController: HttpTestingController;
   let httpClientSpy: { post: jasmine.Spy };

@@ -149,6 +149,7 @@ export const DEFAULT_FULL_RESPONSE: FullInfoResponse = {
     transit: 'string',
 }
 
+export const createDefaultFullResponse = (): FullInfoResponse => ({ ...DEFAULT_FULL_RESPONSE });
 export const DEFAULT_DEPARTMENT: SimpleInfoResponse = {
     _id: 'string',
     images: {
