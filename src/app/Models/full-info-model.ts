@@ -128,7 +128,15 @@ export const DEFAULT_FULL_RESPONSE: FullInfoResponse = {
         $numberDecimal: 'string'
         },
     property_type:         'string',
-    review_scores:         [],
+    review_scores:         {
+        review_scores_accuracy: 1,
+        review_scores_checkin: 2,
+        review_scores_cleanliness: 3,
+        review_scores_communication: 4,
+        review_scores_location: 5,
+        review_scores_rating: 6,
+        review_scores_value: 7
+    },
     reviews:               [],
     room_type:             'string',
     security_deposit:      {

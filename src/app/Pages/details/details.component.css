@@ -1,9 +1,46 @@
-
-
+.ng-hide {
+    display: none !important;
+}
 .department_img{
 
     width: 18rem;
     height: 18rem;
     border-radius: 15px;
 
+}
+.row {
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+}
+
+.col-xs-4 {
+    width: 33.33%;
+}
+.col-xs-6 {
+    width: 50%;
+}
+.col-xs-8 {
+    width: 66.66%;
+}
+.col-xs-12 {
+    width: 100%;
+}
+.booking-card {
+    border: 1px;
+    border-radius: 10px;
+    box-shadow: 1px;
+    padding: 12px;
+}
+.booking-card_button {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    border-width: 0px;
+    background-color: #ff385c;
+    color: white;
+    font-weight: bold;
+}
+.booking-card_breakdown {
+    text-align: -webkit-center;
 }
