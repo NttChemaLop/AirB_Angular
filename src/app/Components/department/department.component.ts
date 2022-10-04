@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Router } from '@angular/router';
 import { createDefaultDepartment, SimpleInfoResponse } from 'src/app/Models/full-info-model';
 import { DepartmentstateService } from 'src/app/Services/departmentstate.service';

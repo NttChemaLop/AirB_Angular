@@ -1,7 +1,7 @@
 import { DEFAULT_FULL_RESPONSE } from './../../Models/full-info-model';
-import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input} from '@angular/core';
 import * as mapApi from 'leaflet';
-import {  createDefaultDepartment, FullInfoResponse } from 'src/app/Models/full-info-model';
+import {   FullInfoResponse } from 'src/app/Models/full-info-model';
 import { PopUpService } from 'src/app/Services/pop-up.service';
 
 
