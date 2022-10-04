@@ -1,5 +1,84 @@
+<section class="p-5">
+    <section class="m-4">
+        <h3>{{department.name}}</h3>
+        <div class="d-flex ">
+            <p class="me-3"> ★{{department.review_scores.review_scores_rating}}, {{department.number_of_reviews }} evaluaciones</p>
+            <p><span>{{department.address.suburb}}</span>, <span>{{department.address.market}}</span>,
+                <span>{{department.address.country}}</span>
+            </p>
+    
+        </div>
+        <img class="department_img " src="{{department.images.picture_url}}" alt="">
+    </section>
+    
+    <div class="row">
+        <div class="col-xs-8">
+            <div class="d-flex justify-content-between m-4">
+                <div>
+                    <h2>Alojamineto entero: {{department.property_type}}. Anfitrión: {{department.host.host_name}}</h2>
+                    <span>{{department.bedrooms}} dormitarios </span> <span>{{department.beds}}  camas</span>
+                </div>
+                <img src={{department.host.host_thumbnail_url}} class="rounded-circle" style="width: 100px;" alt="">
+            
+            </div>
+            
+            
+            <div class="header"></div>
+            
+            <div class="header"></div>
+            <p class="m-4">Cancelación gratuita durante 48 horas</p>
+            <div class="header"></div>
+            <p class="m-4">{{department.summary}}</p>
+        </div>
+        <div class="col-xs-4">
+            <div class="booking-card">
+                <p><span class="department_price">{{department.price.$numberDecimal}}</span>€/noche</p>
+                <p>★ ·  {{department.number_of_reviews }} evaluaciones</p>
+                <div class="booking-card_info">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <h6>LLEGADA</h6>
+                            <p>1/1/2023</p>
+                        </div>
+                        <div class="col-xs-6">
+                            <h6>SALIDA</h6>
+                            <p>6/1/2023</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <h6>HUÉSPEDES</h6>
+                            <p>1 viajero</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="booking-card_button">Reservar</button>
+                <div class="booking-card_breakdown ng-hide">
+                    <p>No se te cobrará nada aun</p>
+                </div>
+                <div class="row">
+                    <p class="col-xs-8">{{department.price.$numberDecimal}}€ x 5 noches</p><p class="col-xs-4 col-right">110€</p>
+                    <p class="col-xs-8">Gastos de limpieza</p><p class="col-xs-4 col-right">201€</p>
+                    <p class="col-xs-8">Comisión de servicio</p><p class="col-xs-4 col-right">594€</p>
+                    <p class="col-xs-8">Impuestos y tarifas sobre el alojamiento</p><p class="col-xs-4 col-right">166€</p>
+                    <div class="header"></div>
+                    <p class="col-xs-8">Total</p><p class="col-xs-4 col-right">1071€</p>
+                </div>
+            </div>
+        </div> 
+    </div>
+    
+    <div class="header"></div>
+    <p class="m-4">Cancelación gratuita durante 48 horas</p>
+    <div class="header"></div>
+    
+    <p class="m-4">{{department.summary}}</p>
+    
+    <div class="header"></div>
+   
 
-<p>details works!!!!!!!!!!!!</p>
-<div class="mapComponent">
-    <app-map [department]="department"></app-map>
-</div>
+     <app-reviews [department]="department"></app-reviews>
+     <app-host-info [department]="department"></app-host-info>
+    
+
+</section>

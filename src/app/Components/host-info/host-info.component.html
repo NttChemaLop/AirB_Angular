@@ -1,0 +1,38 @@
+<div class="header"></div>
+    <div class="mapComponent">
+        <app-map [department]="department"></app-map>
+    </div>
+    <div class="d-flex n m-4">
+        <img src={{department.host.host_thumbnail_url}} class="rounded-circle" style="width: 100px;" alt="">
+        <div>
+            <h2 class="ms-3">Anfitrión: {{department.host.host_name}}</h2>
+        </div>
+    </div>
+    <div class="d-flex justify-content-around">
+       
+        <div>
+            <p>
+                ★ {{department.number_of_reviews}} 
+                evaluaciones
+            </p>
+            <p *ngIf="department.host.host_is_superhost
+            ; else noSuperHost">
+                SuperAnfitrion
+            </p>
+            <ng-template #noSuperHost> 
+                <p>Anfitrion</p></ng-template>
+
+        </div>
+        <div>
+            <p *ngIf="department.host.host_identity_verified; else noVerified">
+                Indentidad verificada
+            </p>
+            <ng-template #noVerified> 
+                <p>Identidad no verificada</p></ng-template>
+        </div>
+
+    </div>
+
+<p>Ratio de Respuesta :{{department.host.host_response_rate}}%</p>
+<p>Tiempo de respuesta: {{department.host.host_response_time}}</p>
+

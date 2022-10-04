@@ -26,7 +26,29 @@ export class ModelsFactoryService {
       images:                this.createEmptyImages(),
       address:      this.createEmptyAddress(),
       name:                  '',
-      review_scores:         {},
+      review_scores:          {
+        review_scores_accuracy
+            :
+            10,
+        review_scores_checkin
+            :
+            10,
+        review_scores_cleanliness
+            :
+            8,
+        review_scores_communication
+            :
+            10,
+        review_scores_location
+            :
+            8,
+        review_scores_rating
+            :
+            100,
+        review_scores_value
+            :
+            10
+    },
       score:                 0,
       summary:               '',
       price:                 this.createEmptyBathrooms()
@@ -67,7 +89,7 @@ export class ModelsFactoryService {
 
     createEmptyBathrooms():Bathrooms{
       return {...{
-        numberDecimal:''
+        $numberDecimal:''
       }}
 
     }

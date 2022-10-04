@@ -18,7 +18,7 @@ export class DepartmentComponent {
   }
 
   goToDetailsPage(department:SimpleInfoResponse):void{
-    this.departmentStateService.setDepartment(department);
+
     this.router.navigate([`detail/${department._id}`])
   
   }

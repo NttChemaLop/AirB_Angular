@@ -1,30 +1,27 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { SimpleInfoResponse } from '../Models/full-info-model';
-import { ModelsFactoryService } from './models-factory.service';
+import { HttpClient } from '@angular/common/http';
+import { Observable, pipe, map,filter } from 'rxjs';
+import { FullInfoResponse, SimpleInfoResponse } from '../Models/full-info-model';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class DepartmentstateService {
 
-  private $departmentState :BehaviorSubject<SimpleInfoResponse>
-  public readonly  $actualDeparmentState:Observable<SimpleInfoResponse>
 
 
-  constructor(private modelFactory : ModelsFactoryService) {
-    const localData =localStorage.getItem('department')
-    const initialState = localData!==null ? JSON.parse(localData):  this.modelFactory.createEmptySimpleDeparment()
 
-    this.$departmentState = new BehaviorSubject(initialState);
-    this.$actualDeparmentState = this.$departmentState.asObservable();
+  constructor(private http: HttpClient) {
+
 
    }
-
-   setDepartment(department:SimpleInfoResponse){
-    localStorage.setItem('department',JSON.stringify(department))
-    this.$departmentState.next(department)
-   }
+ 
+   getDepartments(id:string):Observable<FullInfoResponse>{
+    return this.http.get<FullInfoResponse>(`https://airbnb-learning-api.herokuapp.com/listings/${id}`)
+    
+     
+  }
 
 
 

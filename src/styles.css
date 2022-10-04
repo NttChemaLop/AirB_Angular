@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+.header {
+    border-bottom: 1px solid gray;
+    color: #ff385c;
+}
 a{
     text-decoration: none;
     color: #ff385c;

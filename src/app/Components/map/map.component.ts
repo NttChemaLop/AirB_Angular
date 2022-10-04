@@ -1,6 +1,7 @@
+import { DEFAULT_FULL_RESPONSE } from './../../Models/full-info-model';
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import * as mapApi from 'leaflet';
-import { SimpleInfoResponse, createDefaultDepartment } from 'src/app/Models/full-info-model';
+import {  createDefaultDepartment, FullInfoResponse } from 'src/app/Models/full-info-model';
 import { PopUpService } from 'src/app/Services/pop-up.service';
 
 
@@ -12,7 +13,7 @@ import { PopUpService } from 'src/app/Services/pop-up.service';
 export class MapComponent implements AfterViewInit {
 
   private map!: mapApi.Map;
-  @Input() department: SimpleInfoResponse = createDefaultDepartment();
+  @Input() department:FullInfoResponse = DEFAULT_FULL_RESPONSE;
 
   constructor(private popUpService:PopUpService) { }
 
@@ -23,7 +24,6 @@ export class MapComponent implements AfterViewInit {
 
 
   private initMap():void{
-    console.log(this.department)
 
       this.map = mapApi.map('map',{
         center:[this.department.address.location.coordinates[1], this.department.address.location.coordinates[0] ],
