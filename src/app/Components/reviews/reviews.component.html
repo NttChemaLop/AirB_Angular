@@ -1,0 +1,43 @@
+
+ <h3 class="m-4">★{{department.review_scores.review_scores_rating}}, {{department.number_of_reviews }} evaluaciones</h3>
+ <section class="m-5 d-flex justify-content-between">
+ 
+     <div>
+         <div class="d-flex">
+             <p class="me-3">Limpieza</p>
+             <p>{{department.review_scores.review_scores_cleanliness }}</p>
+         </div>
+         <div class="d-flex">
+             <p class="me-3">Comunicación</p>
+             <p>{{ department.review_scores.review_scores_communication }}</p>
+         </div>
+         <div class="d-flex">
+             <p class="me-3">Llegada</p>
+             <p>{{ department.review_scores.review_scores_checkin        }}</p>
+         </div>
+     </div>
+     <div>
+         <div class="d-flex">
+             <p class="me-3">Veracidad</p>
+             <p>{{department.review_scores.review_scores_accuracy            }}</p>
+         </div>
+         <div class="d-flex">
+             <p class="me-3">Ubicación</p>
+             <p>{{ department.review_scores.review_scores_location }}</p>
+         </div>
+         <div class="d-flex">
+             <p class="me-3">Calidad</p>
+             <p>{{ department.review_scores.review_scores_value        }}</p>
+         </div>
+     </div>
+ 
+ </section>
+
+ <div class="m-5 d-flex justify-content-between flex-wrap">
+     <div   *ngFor="let review of department.reviews">
+             <p>{{review.reviewer_name}}</p>
+             <p>{{review.date}}</p>
+             <p>{{review.comments}}</p>
+     </div>
+  </div>
+ 

@@ -51,80 +51,82 @@ export type SimpleInfoResponse = {
 }
 
 export const DEFAULT_FULL_RESPONSE: FullInfoResponse = {
-    _id:                   'string',
-    access:                'string',
-    accommodates:          1,
-    address:               {
-        country:         'string',
-        country_code:    'string',
+    _id: 'string',
+    access: 'string',
+    accommodates: 1,
+    address: {
+        country: 'string',
+        country_code: 'string',
         government_area: 'string',
-        location:        {
-            coordinates:       [],
+        location: {
+            coordinates: [2.17909, 41.43897],
             is_location_exact: true,
-            type:              'string'
+            type: 'string'
         },
-        market:          'string',
-        street:          'string',
-        suburb:          'string'
+        market: 'string',
+        street: 'string',
+        suburb: 'string'
     },
-    amenities:             [],
-    availability:          {
-        availability_30:  1,
+    amenities: [],
+    availability: {
+        availability_30: 1,
         availability_365: 2,
-        availability_60:  3,
-        availability_90:  4
-       },
-    bathrooms:             {
+        availability_60: 3,
+        availability_90: 4
+    },
+    bathrooms: {
         $numberDecimal: 'string'
-        },
-    bed_type:              'string',
-    bedrooms:              1,
-    beds:                  1,
+    },
+    bed_type: 'string',
+    bedrooms: 1,
+    beds: 1,
     calendar_last_scraped: new Date,
-    cancellation_policy:   'string',
-    cleaning_fee:          {
+    cancellation_policy: 'string',
+    cleaning_fee: {
         $numberDecimal: 'string'
-        },
-    description:           'string',
-    extra_people:          {
+    },
+    description: 'string',
+    extra_people: {
         $numberDecimal: 'string'
-        },
-    guests_included:       {
+    },
+    guests_included: {
         $numberDecimal: 'string'
-        },
-    host:                  {
-        host_about:                'string',
-        host_has_profile_pic:      false,
-        host_id:                   'string',
-        host_identity_verified:    false,
-        host_is_superhost:         false,
-        host_listings_count:       1,
-        host_location:             'string',
-        host_name:                 'string',
-        host_neighbourhood:        'string',
-        host_picture_url:          'string',
-        host_thumbnail_url:        'string',
+    },
+    host: {
+        host_about: 'string',
+        host_has_profile_pic: false,
+        host_id: 'string',
+        host_identity_verified: false,
+        host_is_superhost: false,
+        host_listings_count: 1,
+        host_location: 'string',
+        host_name: 'string',
+        host_neighbourhood: 'string',
+        host_picture_url: 'string',
+        host_response_rate: 90,
+        host_response_time: 'string',
+        host_thumbnail_url: 'string',
         host_total_listings_count: 8,
-        host_url:                  'string',
-        host_verifications:        [],
-       },
-    house_rules:           'string',
-    images:                {
-        medium_url:     'string',
-        picture_url:    'string',
-        thumbnail_url:  'string',
+        host_url: 'string',
+        host_verifications: [],
+    },
+    house_rules: 'string',
+    images: {
+        medium_url: 'string',
+        picture_url: 'string',
+        thumbnail_url: 'string',
         xl_picture_url: 'string'
     },
-    interaction:           'string',
-    last_scraped:          new Date,
-    listing_url:           'string',
-    maximum_nights:        'string',
-    minimum_nights:        'string',
-    name:                  'string',
+    interaction: 'string',
+    last_scraped: new Date,
+    listing_url: 'string',
+    maximum_nights: 'string',
+    minimum_nights: 'string',
+    name: 'string',
     neighborhood_overview: 'string',
-    notes:                 'string',
-    number_of_reviews:     1,
-    price:                 {
+    notes: 'string',
+    number_of_reviews: 1,
+    price: {
         $numberDecimal: 'string'
         },
     property_type:         'string',
@@ -141,10 +143,10 @@ export const DEFAULT_FULL_RESPONSE: FullInfoResponse = {
     room_type:             'string',
     security_deposit:      {
         $numberDecimal: 'string'
-        },
-    space:                 'string',
-    summary:               'string',
-    transit:               'string',
+    },
+    space: 'string',
+    summary: 'string',
+    transit: 'string',
 }
 
 export const DEFAULT_DEPARTMENT: SimpleInfoResponse = {
@@ -240,6 +242,8 @@ export type Host = {
     host_name: string;
     host_neighbourhood: string;
     host_picture_url: string;
+    host_response_rate: number;
+    host_response_time:string,
     host_thumbnail_url: string;
     host_total_listings_count: number;
     host_url: string;
