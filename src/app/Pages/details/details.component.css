@@ -26,6 +26,9 @@
 .col-xs-12 {
     width: 100%;
 }
+.col-right {
+    text-align: end;
+}
 .booking-card {
     border: 1px;
     border-radius: 10px;
